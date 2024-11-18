@@ -1,0 +1,28 @@
+version: '3.12'
+
+services:
+  db:
+    container_name: lumofy-database
+    image: postgres:13
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    restart: always
+    env_file:
+      - lumofy_task/.env
+    environment:
+     - POSTGRES_DB=lumofy-db
+     - POSTGRES_USER=postgres
+     - POSTGRES_PASSWORD=postgres
+  web:
+    container_name: lumofy-back
+    build: .
+    volumes:
+      - .:/hp/backend
+    env_file:
+      - lumofy_task/.env
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+ 
+

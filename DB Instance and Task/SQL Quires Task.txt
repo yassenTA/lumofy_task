@@ -1,0 +1,41 @@
+Database Task:
+
+1- Retrieve all students enrolled in a given course: (replace course_id with the id of course)
+
+    SELECT s.id, u.name, u.email
+    FROM main_students s
+	JOIN main_users u ON s.user_id = u.id
+    JOIN main_enroll e ON s.id = e.students_id
+    WHERE e.courses_id=<course_id>;
+
+    Note : There is a function in DB instance that will perform the same action of the query called: (get_students_in_course)
+
+2- Get the progress of each student per course based on lesson completion: (replace id_course_id with the id of course)
+
+
+    SELECT s.id, main_users.name, c.id, c.course_name,
+       COUNT(lc.id)::BIGINT AS completed_lessons,
+       COUNT(l.id)::BIGINT AS total_lessons,
+       (COUNT(lc.id) * 100.0 / COUNT(l.id))::BIGINT AS completion_percentage
+  	FROM main_students s
+ 	JOIN main_users ON s.user_id = main_users.id
+    JOIN main_enroll e ON s.id = e.students_id
+    JOIN main_courses c ON e.courses_id = c.id
+    JOIN main_lessons l ON l.courses_id = c.id
+    LEFT JOIN main_completions lc ON lc.enroll_id = e.id
+    WHERE c.id = <id_course_id>
+    GROUP BY s.id, main_users.name, c.id,c.course_name;
+
+    Note : There is a function in DB instance that will perform the same action of the query called: (get_student_course_progress)
+
+ 3- Retrieve the courses a teacher is assigned to: (replace id_teacher_id with the id of teacher)
+
+    SELECT t.id, main_users.name, c.id, c.course_name
+    FROM main_teachers t
+	JOIN main_users ON t.id = main_users.id
+    JOIN main_teachercourses a ON t.id = a.id
+    JOIN main_courses c ON a.courses_id = c.id
+    WHERE t.id = <id_teacher_id>;
+
+
+    Note : There is a function in DB instance that will perform the same action of the query called: (get_courses_by_teacher)

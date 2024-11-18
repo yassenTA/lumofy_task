@@ -1,0 +1,6 @@
+Code Review:
+
+1- Check if user already exists by username or email.
+2- Password not assigned to model directly without hashing.
+3- .save() method is missing to save the data in the database.
+4-  Return a success response with HTTP status code 201 (Created).

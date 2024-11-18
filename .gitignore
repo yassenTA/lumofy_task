@@ -1,0 +1,8 @@
+venv
+.env
+data
+main/migrations/__pycache__
+main/__pycache__
+lumofy_task/__pycache__
+python_django_problem/migrations/__pycache__
+python_django_problem/__pycache__

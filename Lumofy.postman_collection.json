@@ -1,0 +1,1946 @@
+{
+	"info": {
+		"_postman_id": "60df5cbc-9a53-4f58-bc10-c6413de6c92b",
+		"name": "Lumofy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21235719",
+		"_collection_link": "https://dark-water-858485.postman.co/workspace/IGEDU~a3cb930f-542d-44ee-9c0b-2443f5b0d394/collection/21235719-60df5cbc-9a53-4f58-bc10-c6413de6c92b?action=share&source=collection_link&creator=21235719"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "SignUp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"yassen tamer\",\r\n    \"gender\":\"Male\",\r\n    \"email\":\"yassentamer701@gmail.com\",\r\n    \"password\":\"yassen1214\",\r\n    \"password2\":\"yassen1214\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/api/signup",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"signup"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Password Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"yassen tamer\",\r\n    \"gender\":\"Male\",\r\n    \"email\":\"yassentamer701@gmail.com\",\r\n    \"password\":\"yassen1214\",\r\n    \"password2\":\"yassen121\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}/api/signup",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"signup"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 18 Nov 2024 15:56:34 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "43"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": [\n        \"Password fields didn't match.\"\n    ]\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"yassen tamer\",\r\n    \"gender\":\"Male\",\r\n    \"email\":\"yassentamer701@gmail.com\",\r\n    \"password\":\"yassen1214\",\r\n    \"password2\":\"yassen1214\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}/api/signup",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"signup"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 18 Nov 2024 15:58:21 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "74"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"email\": \"yassentamer701@gmail.com\",\n    \"name\": \"yassen tamer\",\n    \"gender\": \"Male\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"yassentamer701@gmail.com\",\r\n    \"password\":\"yassen1214\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/api/login",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Wrong email or password",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"yassentamer701@gmail.com\",\r\n    \"password\":\"yassen\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}/api/login",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"login"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 18 Nov 2024 16:03:49 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "WWW-Authenticate",
+									"value": "Bearer realm=\"api\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "63"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"detail\": \"No active account found with the given credentials\"\n}"
+						},
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"yassentamer701@gmail.com\",\r\n    \"password\":\"yassen1214\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}/api/login",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 18 Nov 2024 16:04:20 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "676"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTczOTcyMTg2MCwiaWF0IjoxNzMxOTQ1ODYwLCJqdGkiOiI4ODcyN2EyYWFhNmU0N2RhYjRkNDhhMGM3Mjk3NGQ3MiIsInVzZXJfaWQiOiIxIiwiZW1haWwiOiJ5YXNzZW50YW1lcjcwMUBnbWFpbC5jb20ifQ.JKW2v91eb95yxgekX3l85tj1l6v9lb_gOrDXx0hW11o\",\n    \"access\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMyMjA1MDYwLCJpYXQiOjE3MzE5NDU4NjAsImp0aSI6IjUwZTVmMjRkMjM0ODRiMGY5M2QwMzViMGMwMWE3MzkzIiwidXNlcl9pZCI6IjEiLCJlbWFpbCI6Inlhc3NlbnRhbWVyNzAxQGdtYWlsLmNvbSJ9.En9U9g3_IQTrJfh2HUQAqSWIu35DUDyibuPqPlM2ZSM\",\n    \"user_data\": {\n        \"id\": 1,\n        \"name\": \"yassen tamer\",\n        \"gender\": \"Male\",\n        \"email\": \"yassentamer701@gmail.com\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "List Students",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "No Auth",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/api/list_students",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"list_students"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 18 Nov 2024 16:06:54 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "WWW-Authenticate",
+									"value": "Bearer realm=\"api\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "58"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"detail\": \"Authentication credentials were not provided.\"\n}"
+						},
+						{
+							"name": "No Students",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/api/list_students",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"list_students"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 18 Nov 2024 16:07:56 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "30"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"No students found.\"\n}"
+						},
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/api/list_students",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"list_students"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 18 Nov 2024 16:32:59 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "279"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"user\": {\n                \"id\": 3,\n                \"name\": \"student 1\",\n                \"gender\": \"Male\",\n                \"email\": \"student1@gmail.com\"\n            }\n        },\n        {\n            \"id\": 2,\n            \"user\": {\n                \"id\": 4,\n                \"name\": \"student 2\",\n                \"gender\": \"Male\",\n                \"email\": \"student2@gmail.com\"\n            }\n        },\n        {\n            \"id\": 3,\n            \"user\": {\n                \"id\": 5,\n                \"name\": \"student 3\",\n                \"gender\": \"Female\",\n                \"email\": \"student3@gmail.com\"\n            }\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Course CRUD",
+			"item": [
+				{
+					"name": "Create Course",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMyMjA1MDYwLCJpYXQiOjE3MzE5NDU4NjAsImp0aSI6IjUwZTVmMjRkMjM0ODRiMGY5M2QwMzViMGMwMWE3MzkzIiwidXNlcl9pZCI6IjEiLCJlbWFpbCI6Inlhc3NlbnRhbWVyNzAxQGdtYWlsLmNvbSJ9.En9U9g3_IQTrJfh2HUQAqSWIu35DUDyibuPqPlM2ZSM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"course_name\":\"Arabic\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/api/create_course",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"create_course"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"course_name\":\"Arabic\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}/api/create_course",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"create_course"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 18 Nov 2024 16:35:08 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "40"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 3,\n        \"course_name\": \"Arabic\"\n    }\n}"
+						},
+						{
+							"name": "error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}/api/create_course",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"create_course"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 18 Nov 2024 16:36:31 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "41"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"course_name\": \"This field is required.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Course",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMyMjA1MDYwLCJpYXQiOjE3MzE5NDU4NjAsImp0aSI6IjUwZTVmMjRkMjM0ODRiMGY5M2QwMzViMGMwMWE3MzkzIiwidXNlcl9pZCI6IjEiLCJlbWFpbCI6Inlhc3NlbnRhbWVyNzAxQGdtYWlsLmNvbSJ9.En9U9g3_IQTrJfh2HUQAqSWIu35DUDyibuPqPlM2ZSM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"course_id\":3,\r\n    \"course_name\":\"English 3\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/api/update_course",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"update_course"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"course_id\":3,\r\n    \"course_name\":\"English 3\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}/api/update_course",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"update_course"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 18 Nov 2024 16:38:14 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "PUT, PATCH, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "43"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 3,\n        \"course_name\": \"English 3\"\n    }\n}"
+						},
+						{
+							"name": "course not found",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"course_id\":5,\r\n    \"course_name\":\"English 3\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}/api/update_course",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"update_course"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 18 Nov 2024 16:38:40 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "PUT, PATCH, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "29"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Course not found.\"\n}"
+						},
+						{
+							"name": "course_id key not found",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \r\n    \"course_name\":\"English 3\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}/api/update_course",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"update_course"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 18 Nov 2024 16:39:00 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "PUT, PATCH, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "39"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"course_id\": \"This field is required.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "List Or Get Courses",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMyMjA1MDYwLCJpYXQiOjE3MzE5NDU4NjAsImp0aSI6IjUwZTVmMjRkMjM0ODRiMGY5M2QwMzViMGMwMWE3MzkzIiwidXNlcl9pZCI6IjEiLCJlbWFpbCI6Inlhc3NlbnRhbWVyNzAxQGdtYWlsLmNvbSJ9.En9U9g3_IQTrJfh2HUQAqSWIu35DUDyibuPqPlM2ZSM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/list_or_get_course?course_id=2",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"list_or_get_course"
+							],
+							"query": [
+								{
+									"key": "course_id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "List All Courses",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/api/list_or_get_course",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"list_or_get_course"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 18 Nov 2024 16:39:49 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "115"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"course_name\": \"English 1\"\n        },\n        {\n            \"id\": 2,\n            \"course_name\": \"English 2\"\n        },\n        {\n            \"id\": 3,\n            \"course_name\": \"English 3\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Get Specific course",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/api/list_or_get_course?course_id=2",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"list_or_get_course"
+									],
+									"query": [
+										{
+											"key": "course_id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 18 Nov 2024 16:41:35 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "GET, HEAD, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "43"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 2,\n        \"course_name\": \"English 2\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete Course",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMyMjA1MDYwLCJpYXQiOjE3MzE5NDU4NjAsImp0aSI6IjUwZTVmMjRkMjM0ODRiMGY5M2QwMzViMGMwMWE3MzkzIiwidXNlcl9pZCI6IjEiLCJlbWFpbCI6Inlhc3NlbnRhbWVyNzAxQGdtYWlsLmNvbSJ9.En9U9g3_IQTrJfh2HUQAqSWIu35DUDyibuPqPlM2ZSM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/delete_course?course_id=3",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"delete_course"
+							],
+							"query": [
+								{
+									"key": "course_id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "course 404",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/api/delete_course?course_id=5",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"delete_course"
+									],
+									"query": [
+										{
+											"key": "course_id",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 18 Nov 2024 16:43:00 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "DELETE, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "29"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Course not found.\"\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/api/delete_course?course_id=3",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"delete_course"
+									],
+									"query": [
+										{
+											"key": "course_id",
+											"value": "3"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 18 Nov 2024 16:43:15 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "DELETE, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "42"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Course deleted successfully.\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Lessons",
+			"item": [
+				{
+					"name": "Create Lessons",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMyMjA1MDYwLCJpYXQiOjE3MzE5NDU4NjAsImp0aSI6IjUwZTVmMjRkMjM0ODRiMGY5M2QwMzViMGMwMWE3MzkzIiwidXNlcl9pZCI6IjEiLCJlbWFpbCI6Inlhc3NlbnRhbWVyNzAxQGdtYWlsLmNvbSJ9.En9U9g3_IQTrJfh2HUQAqSWIu35DUDyibuPqPlM2ZSM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Chapter 4\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/api/create_lesson",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"create_lesson"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "name key not found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}/api/create_lesson",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"create_lesson"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 18 Nov 2024 16:44:50 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "34"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"This field is required.\"\n}"
+						},
+						{
+							"name": "success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Chapter 4\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}/api/create_lesson",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"create_lesson"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 18 Nov 2024 16:45:17 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "POST, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "51"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 5,\n        \"name\": \"Chapter 4\",\n        \"courses\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Add Or Remove Lesson",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "Assign Lesson TO Subject",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"course_id\":2,\r\n    \"lessons_status\":[\r\n        {\r\n            \"lesson_id\":5,\r\n            \"add_or_remove\":1\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}/api/add_or_remove_lesson",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"add_or_remove_lesson"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 18 Nov 2024 16:50:36 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "PUT, PATCH, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "83"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 5,\n            \"courses\": {\n                \"id\": 2,\n                \"course_name\": \"English 2\"\n            },\n            \"name\": \"Chapter 4\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "Remove Lesson From Course",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"course_id\":2,\r\n    \"lessons_status\":[\r\n        {\r\n            \"lesson_id\":5,\r\n            \"add_or_remove\":0\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}/api/add_or_remove_lesson",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"api",
+										"add_or_remove_lesson"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Mon, 18 Nov 2024 16:50:57 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "WSGIServer/0.2 CPython/3.12.3"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Accept"
+								},
+								{
+									"key": "Allow",
+									"value": "PUT, PATCH, OPTIONS"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Length",
+									"value": "53"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Referrer-Policy",
+									"value": "same-origin"
+								},
+								{
+									"key": "Cross-Origin-Opener-Policy",
+									"value": "same-origin"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 5,\n            \"courses\": null,\n            \"name\": \"Chapter 4\"\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Track Student Progress",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzMyMjA1MDYwLCJpYXQiOjE3MzE5NDU4NjAsImp0aSI6IjUwZTVmMjRkMjM0ODRiMGY5M2QwMzViMGMwMWE3MzkzIiwidXNlcl9pZCI6IjEiLCJlbWFpbCI6Inlhc3NlbnRhbWVyNzAxQGdtYWlsLmNvbSJ9.En9U9g3_IQTrJfh2HUQAqSWIu35DUDyibuPqPlM2ZSM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/api/track_student?student_id=1",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"api",
+						"track_student"
+					],
+					"query": [
+						{
+							"key": "student_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "student_id key 404",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/track_student",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"track_student"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 18 Nov 2024 16:55:04 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.12.3"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "40"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"student_id\": \"This field is required.\"\n}"
+				},
+				{
+					"name": "success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/track_student?student_id=1",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"track_student"
+							],
+							"query": [
+								{
+									"key": "student_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 18 Nov 2024 16:57:44 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.12.3"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "275"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"student_name\": \"student 1\",\n        \"progress_per_lesson\": [\n            {\n                \"lesson_name\": \"Chapter 1\",\n                \"is_completed\": true\n            },\n            {\n                \"lesson_name\": \"Chapter 2\",\n                \"is_completed\": true\n            },\n            {\n                \"lesson_name\": \"Chapter 1\",\n                \"is_completed\": true\n            },\n            {\n                \"lesson_name\": \"Chapter 2\",\n                \"is_completed\": false\n            }\n        ],\n        \"percentage\": \"75.0%\"\n    }\n}"
+				},
+				{
+					"name": "success 2",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/track_student?student_id=2",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"track_student"
+							],
+							"query": [
+								{
+									"key": "student_id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Mon, 18 Nov 2024 16:57:55 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.12.3"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "179"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"student_name\": \"student 2\",\n        \"progress_per_lesson\": [\n            {\n                \"lesson_name\": \"Chapter 1\",\n                \"is_completed\": true\n            },\n            {\n                \"lesson_name\": \"Chapter 2\",\n                \"is_completed\": false\n            }\n        ],\n        \"percentage\": \"50.0%\"\n    }\n}"
+				}
+			]
+		}
+	]
+}
